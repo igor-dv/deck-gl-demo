@@ -32,7 +32,7 @@ export class Map extends React.PureComponent {
             viewPort: {
                 latitude: 49.254,
                 longitude: -123.13,
-                zoom: 4,
+                zoom: 2,
                 maxZoom: 16,
                 pitch: 0,
                 bearing: 0,
@@ -61,7 +61,7 @@ export class Map extends React.PureComponent {
             let { entities } = this.state;
     
             if (!entities) {
-                entities = randomEntities(100);
+                entities = randomEntities(200);
             } else {
                 entities = [...entities, ...randomEntities(1)];
             }
@@ -79,7 +79,7 @@ export class Map extends React.PureComponent {
                     getSize: 1,
                 })],
             });
-        }, 2000);
+        }, 1000);
     }
 
     render() {
