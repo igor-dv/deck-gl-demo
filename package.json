@@ -1,0 +1,28 @@
+{
+  "name": "deck-gl-demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "storybook": "start-storybook -p 9010",
+    "build-storybook": "build-storybook"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "deck.gl": "^6.4.9",
+    "mapbox-gl": "^0.53.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-map-gl": "^4.1.1",
+    "react-scripts": "2.1.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@storybook/addon-actions": "^5.0.6",
+    "@storybook/addon-links": "^5.0.6",
+    "@storybook/addons": "^5.0.6",
+    "@storybook/react": "^5.0.6",
+    "babel-loader": "^8.0.5"
+  }
+}
