@@ -58,17 +58,16 @@ export class Map extends React.PureComponent {
 
     componentDidMount() {
         setInterval(() => {
-            let { entities } = this.state;
-    
-            if (!entities) {
-                entities = randomEntities(200);
-            } else {
-                entities = [...entities, ...randomEntities(1)];
-            }
-    
-            this.setState({
-                entities,
-                testLayes: [new IconLayer({
+            window.requestAnimationFrame(() => {
+                let { entities } = this.state;
+        
+                if (!entities) {
+                    entities = randomEntities(200);
+                } else {
+                    entities = [...entities, ...randomEntities(1)];
+                }
+
+                const iconLayer = new IconLayer({
                     id: 'test',
                     pickable: true,
                     wrapLongitude: true,
@@ -77,7 +76,12 @@ export class Map extends React.PureComponent {
                     getIcon: () => icon2,
                     sizeScale: 100,
                     getSize: 1,
-                })],
+                }); 
+            
+                this.setState({
+                    entities,
+                    testLayes: [iconLayer], 
+                });
             });
         }, 1000);
     }
